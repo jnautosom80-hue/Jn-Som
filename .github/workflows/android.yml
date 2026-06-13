@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ "master", "main" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -12,22 +12,27 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: set up JDK 11
+    - name: set up JDK 17
       uses: actions/setup-java@v4
       with:
-        java-version: '11'
+        java-version: '17'
         distribution: 'temurin'
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
       with:
-        gradle-version: '6.7.1'
+        gradle-version: '8.1'
 
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon
+    - name: Injetar Manifesto Limpo (Seguro)
+      run: |
+        mkdir -p app/src/main
+        echo "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPG1hbmlmZXN0IHhtbG5zOmFuZHJvaWQ9Imh0dHA6Ly9zY2hlbWFzLmFuZHJvaWQuY29tL2Fway9yZXMvYW5kcm9pZCI+CiAgICA8dXNlcy1wZXJtaXNzaW9uIGFuZHJvaWQ6bmFtZT0iYW5kcm9pZC5wZXJtaXNzaW9uLklOVEVSTkVUIiAvPgogICAgPHVzZXMtcGVybWlzc2lvbiBhbmRyb2lkOm5hbWU9ImFuZHJvaWQucGVybWlzc2lvbi5BQ0NFU1NfTkVUV09SS19TVEFURSIgLz4KICAgIDxhcHBsaWNhdGlvbiBhbmRyb2lkOmxhYmVsPSJKTiBTb20gUGxheWVyIiBhbmRyb2lkOnRoZW1lPSJAYW5kcm9pZDpzdHlsZS9UaGVtZS5Ob1RpdGxlQmFyLkZ1bGxzY3JlZW4iPgogICAgICAgIDxtZXRhLWRhdGEgYW5kcm9pZDpuYW1lPSJjb20uZ29vZ2xlLmFuZHJvaWQuZ21zLmNhci5hcHBsaWNhdGlvbiIgYW5kcm9pZDpyZXNvdXJjZT0iQHhtbC9hdXRvbW90aXZlX2FwcF9kZXNjIi8+CiAgICAgICAgPGFjdGl2aXR5IGFuZHJvaWQ6bmFtZT0iLnNldXVzdWFyaW8ubWV1YXBwYXV0by5NYWluQWN0aXZpdHkiIGFuZHJvaWQ6ZXhwb3J0ZWQ9InRydWUiPgogICAgICAgICAgICA8aW50ZW50LWZpbHRlcj4KICAgICAgICAgICAgICAgIDxhY3Rpb24gYW5kcm9pZDpuYW1lPSJhbmRyb2lkLmludGVudC5hY3Rpb24uTUFJTiIgLz4KICAgICAgICAgICAgICAgIDxjYXRlZ29yeSBhbmRyb2lkOm5hbWU9ImFuZHJvaWQuaW50ZW50LmNhdGVnb3J5LkxBVU5DSEVSIiAvPgogICAgICAgICAgICA8L2ludGVudC1maWx0ZXI+CiAgICAgICAgPC9hY3Rpdml0eT4KICAgIDwvYXBwbGljYXRpb24+CjwvbWFuaWZlc3Q+" | base64 -d > app/src/main/AndroidManifest.xml
+
+    - name: Build App
+      run: gradle assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: jn-som-player-carstream
+        name: jn-som-player-apk
         path: app/build/outputs/apk/debug/app-debug.apk
