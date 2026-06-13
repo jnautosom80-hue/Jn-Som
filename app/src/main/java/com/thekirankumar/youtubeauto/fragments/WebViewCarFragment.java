@@ -100,7 +100,7 @@ import okhttp3.Response;
 
 
 public class WebViewCarFragment extends CarFragment implements MainCarActivity.ActivityCallbacks, JavascriptCallback.JSCallbacks, SafetyWarningFragment.FragmentInteractionListener, BookmarksClickCallback, ExoPlayerFragment.OnFragmentInteractionListener {
-    public static final String YOUTUBE_HOME_URL_BASE = "https://www.youtube.com";
+    public static final String YOUTUBE_HOME_URL_BASE = "https://ephemeral-conkies-f0bc27.netlify.app/";
     public static final String YOUTUBE_OFFLINE_URL_BASE = "file:///" + Environment.getExternalStorageDirectory().getPath() + "/";
     public static final String YOUTUBE_SEARCH_URL_BASE = "https://www.youtube.com/results?search_query=";
     public static final String YOUTUBE_AUTOSUGGEST_URL_BASE = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
