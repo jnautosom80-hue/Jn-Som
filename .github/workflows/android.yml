@@ -21,10 +21,10 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
       with:
-        gradle-version: '6.7.1'
+        gradle-version: '6.5'
 
     - name: Build with Gradle (Clean Run)
-      run: ./gradlew clean assembleDebug --no-daemon --no-build-cache
+      run: gradle clean assembleDebug --no-daemon --no-build-cache
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
