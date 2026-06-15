@@ -1,7 +1,7 @@
 package com.thekirankumar.youtubeauto.fragments;
 
-import android.Manifest;
-import com.thekirankumar.youtubeauto.utils.AppUpdater; 
+import com.thekirankumar.youtubeauto.utils.AppUpdater;
+import com.thekirankumar.youtubeauto.BuildConfig;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
