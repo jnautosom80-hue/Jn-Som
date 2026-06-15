@@ -311,8 +311,8 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
         mainCarActivity.setIgnoreConfigChanges(512);
         Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler(mainCarActivity));
 
-        fakeEditText = view.findViewById(R.id.fake_edittext);
-        setupEditTextMirroring(fakeEditText);
+//        fakeEditText = view.findViewById(R.id.fake_edittext);
+//        setupEditTextMirroring(fakeEditText);
 
         final CarUiController carUiController = mainCarActivity.getCarUiController();
         final SearchController searchController = carUiController.getSearchController();
@@ -671,8 +671,8 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
         mainCarActivity.addActivityCallback(this);
     }
 
-    private void setupEditTextMirroring(final CarEditText fakeEditText) {
-        fakeEditText.addTextChangedListener(new TextWatcher() {
+//    private void setupEditTextMirroring(final CarEditText fakeEditText) {
+//        fakeEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -680,7 +680,7 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                webView.enterEditText(fakeEditText.getText().toString());
+//                webView.enterEditText(fakeEditText.getText().toString());
             }
 
             @Override
@@ -689,7 +689,7 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
             }
         });
 
-        fakeEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//        fakeEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -1006,10 +1006,10 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
 
     @Override
     public void onShowKeyboardFromJS(String oldText) {
-        fakeEditText.setText(oldText);
+//        fakeEditText.setText(oldText);
         MainCarActivity mainCarActivity = (MainCarActivity) getContext();
-        mainCarActivity.a().startInput(fakeEditText);
-        fakeEditText.setSelection(fakeEditText.getText().length());
+//        mainCarActivity.a().startInput(fakeEditText);
+//        fakeEditText.setSelection(fakeEditText.getText().length());
         ViewGroup.LayoutParams layoutParams = webView.getLayoutParams();
         layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150, getResources().getDisplayMetrics());
         webView.setLayoutParams(layoutParams);
