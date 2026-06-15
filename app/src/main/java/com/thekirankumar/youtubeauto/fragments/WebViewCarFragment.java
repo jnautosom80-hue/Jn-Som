@@ -1,6 +1,7 @@
 package com.thekirankumar.youtubeauto.fragments;
 
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout.AspectRatio;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
