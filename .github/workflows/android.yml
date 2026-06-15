@@ -1,4 +1,4 @@
-name: Android CI
+name: Android CI Clean Build
 
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
       with:
         gradle-version: '6.7.1'
 
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon
+    - name: Build with Gradle (Clean Run)
+      run: ./gradlew clean assembleDebug --no-daemon --no-build-cache
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
