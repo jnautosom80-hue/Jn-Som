@@ -25,11 +25,9 @@ android {
     }
 }
 
-// Repositório necessário para encontrar o plugin de reconhecimento de voz
 repositories {
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -37,7 +35,4 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    
-    // Ferramenta de comando de voz que o CarStream exige nas linhas com erro
-    
 }
