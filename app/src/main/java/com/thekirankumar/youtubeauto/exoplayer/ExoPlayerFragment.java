@@ -1,6 +1,7 @@
 package com.thekirankumar.youtubeauto.exoplayer;
 
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout.AspectRatio;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
