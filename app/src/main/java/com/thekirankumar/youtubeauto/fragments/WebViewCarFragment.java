@@ -59,9 +59,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.github.zagum.speechrecognitionview.RecognitionProgressView;
-import com.google.android.apps.auto.sdk.CarUiController;
-import com.google.android.apps.auto.sdk.SearchCallback;
 import com.google.android.apps.auto.sdk.SearchController;
 import com.google.android.apps.auto.sdk.SearchItem;
 import com.google.firebase.analytics.FirebaseAnalytics;
