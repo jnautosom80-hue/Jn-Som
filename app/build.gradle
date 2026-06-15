@@ -39,5 +39,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     
     // Ferramenta de comando de voz que o CarStream exige nas linhas com erro
-    implementation 'com.github.zagum:SpeechRecognitionView:1.0.2'
+    
 }
