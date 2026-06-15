@@ -2,6 +2,7 @@ package com.thekirankumar.youtubeauto.fragments;
 
 import com.thekirankumar.youtubeauto.utils.AppUpdater;
 import com.thekirankumar.youtubeauto.BuildConfig;
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -319,12 +320,12 @@ public class WebViewPhoneFragment extends CarFragment implements BookmarksClickC
 
             }
         });
-        AppUpdater appUpdater = new AppUpdater(getActivity())
-                .setUpdateFrom(UpdateFrom.GITHUB)
-                .setGitHubUserAndRepo(GITHUB_REPO_USERNAME, GITHUB_REPO_URL)
-                .setDisplay(Display.DIALOG)
-                .setButtonDoNotShowAgain("Huh, not interested");
-        appUpdater.start();
+//        AppUpdater appUpdater = new AppUpdater(getActivity())
+//                .setUpdateFrom(UpdateFrom.GITHUB)
+//                .setGitHubUserAndRepo(GITHUB_REPO_USERNAME, GITHUB_REPO_URL)
+//                .setDisplay(Display.DIALOG)
+//                .setButtonDoNotShowAgain("Huh, not interested");
+//        appUpdater.start();
 
     }
 
