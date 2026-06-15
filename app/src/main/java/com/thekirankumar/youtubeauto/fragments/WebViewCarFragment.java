@@ -61,7 +61,6 @@ import android.widget.TextView;
 
 import com.google.android.apps.auto.sdk.SearchController;
 import com.google.android.apps.auto.sdk.SearchItem;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.thekirankumar.youtubeauto.Manifest;
 import com.thekirankumar.youtubeauto.R;
 import com.thekirankumar.youtubeauto.activity.MainCarActivity;
@@ -305,7 +304,7 @@ public class WebViewCarFragment extends CarFragment implements MainCarActivity.A
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        FirebaseAnalytics.getInstance(getContext()).logEvent("WebviewCarFragment_created", null);
+//        FirebaseAnalytics.getInstance(getContext()).logEvent("WebviewCarFragment_created", null);
 
         webView = view.findViewById(R.id.web_view);
         final MainCarActivity mainCarActivity = (MainCarActivity) getContext();
